@@ -27,22 +27,66 @@ let dom = document.querySelector('#root');
 
 // ------------------------------------------------------------------------------------
 
-const list = {
-  fontSize: '18pt',
+// const list = {
+//   fontSize: '18pt',
+//   padding: '5px 50px',
+// }
+
+// let data = [
+//   <li>one</li>,
+//   <li>two</li>,
+//   <li>three</li>,
+// ]
+
+// let el = (
+//   <div>
+//     <ul style={list}>
+//       {data}
+//     </ul>
+//   </div>
+// )
+
+// ------------------------------------------------------------------------------------
+
+const table = {
+  fontSize: '16pt',
   padding: '5px 50px',
 }
 
+const th = {
+  color: 'white',
+  backgroundColor: '#006',
+  padding: '5px 15px',
+}
+
+const td = {
+  color: 'black',
+  padding: '5px 15px',
+  border: '1px solid gray',
+}
+
 let data = [
-  <li>one</li>,
-  <li>two</li>,
-  <li>three</li>,
+  { name: 'Taro', mail: 'taro@yamada', age: 45 },
+  { name: 'Hanako', mail: 'hanako@flower', age: 37 },
+  { name: 'Sachiko', mail: 'sachiko@happy', age: 29 },
 ]
 
 let el = (
   <div>
-    <ul style={list}>
-      {data}
-    </ul>
+    <table style={table}>
+      <tr>
+        <th style={th}>name</th>
+        <th style={th}>mail</th>
+        <th style={th}>age</th>
+      </tr>
+      {data.map((value) => (
+        <tr>
+          <td style={td}>{value.name}</td>
+          <td style={td}>{value.mail}</td>
+          <td style={td}>{value.age}</td>
+        </tr>
+      ))}
+    </table>
   </div>
 )
 
