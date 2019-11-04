@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App';
 
 let dom = document.querySelector('#root');
 
@@ -90,7 +91,7 @@ let dom = document.querySelector('#root');
 //   </div>
 // )
 
-// ------------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------------
 
 // const p = {
 //   fontSize: "20pt",
@@ -115,3 +116,73 @@ let dom = document.querySelector('#root');
 // };
 
 // doAction();
+
+// -------------------------------------------------------------------------------------
+
+// const p = {
+//   fontSize: "20pt",
+//   padding: "10px",
+// }
+
+// const input = {
+//   fontSize: "16pt",
+//   padding: "5px 10px",
+// }
+
+// let message = 'お名前をどうぞ:';
+// let in_val = '';
+
+// let doChange = (event) => {
+//   in_val = event.target.value;
+//   message = 'こんにちは, ' + in_val + 'さん！！';
+// }
+
+// let doAction = (event) => {
+//   let el = (
+//     <div>
+//       <p style={p}>{message}</p>
+//       <div>
+//         <input type="text" id="input" style={input}
+//           onChange={doChange} />
+//         <button onClick={doAction} style={input}>Click</button>
+//       </div>
+//     </div>
+//   );
+//   ReactDOM.render(el, dom);
+// }
+
+// doAction();
+
+
+
+// -------------------------------------------------------------------------------------
+
+
+
+// const msg = {
+//   fontSize: "20pt",
+//   fontWeight: "bold",
+//   padding: "10px",
+//   color: "white",
+//   backgroundColor: "darkblue"
+// };
+
+
+// // これが関数コンポーネント
+// function Welcome(props) {
+//   return <p style={msg}>Hello React!!</p>;
+// }
+
+
+// -------------------------------------------------------------------------------------
+
+
+
+// 表示するJSX
+let el = (
+  <div>
+    <App msg="Hello, component" />
+  </div>
+);
+
+ReactDOM.render(el, dom);
