@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Item extends Component {
 
   li = {
-    lisyStyleType: "square",
+    listStyleType: "square",
     fontSize: "16pt",
     color: "#06",
     margin: "0px",

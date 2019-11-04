@@ -1,42 +1,55 @@
 import React, { Component } from 'react';
-import List from "./List";
+// import List from "./List";
+import Message from "./Message";
 // import Rect from './Rect';
 
 import './App.css';
 
 class App extends Component {
 
-  data = [
-    "This is list sample.",
-    "これはリストのサンプルです。",
-    "配列をリストに変換します。"
-  ];
+  input = '';
 
   msgStyle = {
     fontSize: "24pt",
     color: "#900",
     margin: "20px 0px",
     padding: "5px",
-    borderBottom: "2px solid #900",
   }
 
-  area = {
-    width: "500px",
-    height: "500px",
-    border: "1px solid blue"
+  inputStyle = {
+    fontSize: "12pt",
+    padding: "5px",
   }
 
-  btnStyle = {
-    fontSize: "20pt",
-    padding: "0px 10px"
-  }
+  // area = {
+  //   width: "500px",
+  //   height: "500px",
+  //   border: "1px solid blue"
+  // }
+
+  // btnStyle = {
+  //   fontSize: "20pt",
+  //   padding: "0px 10px"
+  // }
 
   constructor(props) {
     super(props);
     this.state = {
-      list: this.data
+      message: 'type your name'
     };
-    this.doAction = this.doAction.bind(this);
+    this.doChange = this.doChange.bind(this);
+    this.doSubmit = this.doSubmit.bind(this);
+  }
+
+  doChange(event) {
+    this.input = event.target.value;
+  }
+
+  doSubmit(event) {
+    this.setState({
+      message: 'Hello, ' + this.input + '！！'
+    });
+    event.preventDefault();
   }
 
   doAction(e) {
@@ -63,8 +76,20 @@ class App extends Component {
   render() {
     return <div>
       <h1>React</h1>
-      <h2 style={this.msgStyle}>show list.</h2>
-      <List title="サンプル・リスト" data={this.data} />
+      <h2>{this.state.message}</h2>
+      <form action="" onSubmit={this.doSubmit}>
+        <label>
+          <span style={this.inputStyle}></span>Message:
+          <input
+            type="text"
+            style={this.inputStyle}
+            onChange={this.doChange}
+            required
+            pattern="[A-Za-z _,.]+"
+          />
+        </label>
+        <input type="submit" style={this.inputStyle} value="Click" />
+      </form>
     </div>;
   }
 }
