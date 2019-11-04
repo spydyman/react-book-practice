@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
+import List from "./List";
 // import Rect from './Rect';
 
 import './App.css';
 
 class App extends Component {
 
-  data = [];
+  data = [
+    "This is list sample.",
+    "これはリストのサンプルです。",
+    "配列をリストに変換します。"
+  ];
 
   msgStyle = {
     fontSize: "24pt",
@@ -58,10 +63,8 @@ class App extends Component {
   render() {
     return <div>
       <h1>React</h1>
-      <h2 style={this.msgStyle}>show rect.</h2>
-      <div style={this.area} onClick={this.doAction}>
-        {this.data.map((value) => this.draw(value))}
-      </div>
+      <h2 style={this.msgStyle}>show list.</h2>
+      <List title="サンプル・リスト" data={this.data} />
     </div>;
   }
 }
