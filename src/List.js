@@ -19,7 +19,7 @@ class List extends Component {
         <p style={this.title}>{this.props.title}</p>
         <ul>
           {data.map((item) =>
-            <Item number={this.numeber} value={item} key={this.number} />
+            <Item number={this.number++} value={item} key={this.number} />
           )}
         </ul>
       </div>

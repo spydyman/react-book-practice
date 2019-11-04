@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 
 class Item extends Component {
+
   li = {
-    lisyStyleType: "square",
+    listStyleType: "square",
     fontSize: "16pt",
     color: "#06",
     margin: "0px",
@@ -17,7 +18,7 @@ class Item extends Component {
   render() {
     return (
       <li style={this.li}>
-        <span style={this.num}>[{this.props.number}]</span>
+        <span style={this.num}>[{this.props.number}] </span>
         {this.props.value}
       </li>
     );
