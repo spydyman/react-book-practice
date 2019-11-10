@@ -3,18 +3,27 @@ import React, { Component } from 'react';
 import './App.css';
 
 
-class App extends React.Component {
+class App extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            msg: 'Hello',
-        }
+            msg: this.props.msg,
+            switch: true,
+        };
+        this.doAction = this.doAction.bind(this);
+    }
+
+    doAction() {
+        this.setState((state) => ({
+            msg: 'hehehe',
+            switch: !state.switch,
+        }));
     }
 
     render() {
         return <div>
-            <p>{this.state.msg}</p>
+            <p onClick={this.doAction} className={this.state.switch ? 'true' : 'false'}>{this.state.msg}</p>
         </div>
     }
 }
