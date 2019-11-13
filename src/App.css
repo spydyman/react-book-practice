@@ -1,28 +1,6 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
 
 body {
-  margin: 10px;
+  margin: 20px;
 }
 
 h1 {
@@ -37,13 +15,14 @@ h1 {
 p {
   margin: 0px;
   color: #666;
-  font-size: 16pt;
+  font-size: 20px;
 }
 
-input:invalid {
-  border: 2px dashed red;
+.true {
+  color: red;
+  transition: .4s;
 }
-
-input:valid {
-  border: 1px solid blue;
+.false {
+  color: blue;
+  transition: .4s;
 }
