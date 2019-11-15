@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // import App from './App';
-import Message from './Message';
+import App from './App';
+// import Message from './Message';
 
 ReactDOM.render(
-  <Message msg='aaa' />,
+  <App msg='aaa' />,
   document.querySelector('#root')
 );
