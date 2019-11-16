@@ -9,7 +9,9 @@ class child extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // fuga: this.props.dataHoge(),
     };
+    this.fuga = this.props.dataHoge.bind(this);
   }
 
   clickButton() {
@@ -19,7 +21,7 @@ class child extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => { this.clickButton(); }}>ボタン</button>
+        <button onClick={() => { this.fuga(); }}>ボタン</button>
       </div>
     );
   }
